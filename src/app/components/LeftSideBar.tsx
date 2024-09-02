@@ -2,7 +2,6 @@ import React from 'react';
 import { FontAwesomeIcon, FontAwesomeIconProps } from '@fortawesome/react-fontawesome';
 import "@fortawesome/fontawesome-svg-core/styles.css";
 import {
-  faAngleLeft,
   faHome,
   faSearch,
   faBell,
@@ -15,7 +14,48 @@ import {
   faPenToSquare } from '@fortawesome/free-solid-svg-icons';
 import Button from './Button';
 
-
+const menuItems = [
+  {
+    icon: faHome,
+    text: "Home",
+    link: "#"
+  },
+  {
+    icon: faSearch,
+    text: "Search",
+    link: "#"
+  },
+  {
+    icon: faBell,
+    text: "Notifications",
+    link: "#"
+  },
+  {
+    icon: faComment,
+    text: "Chat",
+    link: "#"
+  },
+  {
+    icon: faHashtag,
+    text: "Feed",
+    link: "#"
+  },
+  {
+    icon: faList,
+    text: "Lists",
+    link: "#"
+  },
+  {
+    icon: faUser,
+    text: "Profile",
+    link: "#"
+  },
+  {
+    icon: faGear,
+    text: "Settings",
+    link: "#"
+  }
+]
 
 const LeftSideBar: React.FunctionComponent = () => {
   return (
@@ -24,14 +64,13 @@ const LeftSideBar: React.FunctionComponent = () => {
         <FontAwesomeIcon icon={faIdCardClip} size="xl" />
       </div>
       <ul className="text-lg flex flex-col w-full font-light">
-        <a href="#" className="rounded-lg hover:bg-[#F1F3F5]"><li className="p-2 w-full my-1"><FontAwesomeIcon icon={faHome} size="lg" /><span className="ml-4">Home</span></li></a>
-        <a href="#" className="rounded-lg hover:bg-[#F1F3F5]"><li className="p-2 my-1"><FontAwesomeIcon icon={faSearch} size="lg" /><span className="ml-4">Search</span></li></a>
-        <a href="#" className="rounded-lg hover:bg-[#F1F3F5]"><li className="p-2 my-1"><FontAwesomeIcon icon={faBell} size="lg" /><span className="ml-4">Notifications</span></li></a>
-        <a href="#" className="rounded-lg hover:bg-[#F1F3F5]"><li className="p-2 my-1"><FontAwesomeIcon icon={faComment} size="lg" /><span className="ml-4">Chat</span></li></a>
-        <a href="#" className="rounded-lg hover:bg-[#F1F3F5]"><li className="p-2 my-1"><FontAwesomeIcon icon={faHashtag} size="lg" /><span className="ml-4">Feeds</span></li></a>
-        <a href="#" className="rounded-lg hover:bg-[#F1F3F5]"><li className="p-2 my-1"><FontAwesomeIcon icon={faList} size="lg" /><span className="ml-4">Lists</span></li></a>
-        <a href="#" className="rounded-lg hover:bg-[#F1F3F5]"><li className="p-2 my-1"><FontAwesomeIcon icon={faUser} size="lg" /><span className="ml-4">Profile</span></li></a>
-        <a href="#" className="rounded-lg hover:bg-[#F1F3F5]"><li className="p-2 my-1"><FontAwesomeIcon icon={faGear} size="lg" /><span className="ml-4">Settings</span></li></a>
+        {menuItems.map((item) => {
+          return (
+            <a href={item.link} key={item.text} className="rounded-lg hover:bg-[#F1F3F5]">
+              <li className="p-2 w-full my-1"><FontAwesomeIcon icon={item.icon} size="lg" /><span className="ml-4">{item.text}</span></li>
+            </a>
+          )
+        })}
       </ul>
       <p className="mt-6"><Button><FontAwesomeIcon icon={faPenToSquare} size="lg" /><span className="px-2 font-normal">New Post</span></Button></p>
     </div>

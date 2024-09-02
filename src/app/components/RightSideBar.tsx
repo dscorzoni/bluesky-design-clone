@@ -57,14 +57,14 @@ const RightSideBar: React.FunctionComponent = () => {
             >{link.textDisplay}</a>
           )
         })}
-        <a href="#" className="py-1 hover:underline text-blue-800">More feeds</a>
+        <a href="#" className="py-1 hover:underline decoration-[#0f83fe] text-[#0f83fe]">More feeds</a>
       </div>
 
       <footer className="flex justify-center items-center p-2 my-2">
         {footerLinks.map((link) => {
           return (
             <a href={link.link} key={link.textDisplay}
-              className="py-1 hover:underline text-blue-800 px-2 font-light"
+              className="py-1 hover:underline decoration-[#0f83fe] px-2 font-light text-[#0f83fe]"
             >{link.textDisplay}</a>
           )
         })}
