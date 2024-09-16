@@ -59,7 +59,7 @@ const menuItems = [
 
 const LeftSideBar: React.FunctionComponent = () => {
   return (
-    <div className="bg-white p-4 w-[210px] flex flex-col h-full">
+    <div className="bg-white p-4 w-[230px] flex flex-col h-full">
       <div className="flex justify-between items-center mb-6">
         <FontAwesomeIcon icon={faIdCardClip} size="xl" />
       </div>
@@ -67,7 +67,7 @@ const LeftSideBar: React.FunctionComponent = () => {
         {menuItems.map((item) => {
           return (
             <a href={item.link} key={item.text} className="rounded-lg hover:bg-[#F1F3F5]">
-              <li className="p-2 w-full my-1"><FontAwesomeIcon icon={item.icon} size="lg" /><span className="ml-4">{item.text}</span></li>
+              <li className="py-2 px-4 w-full my-1"><FontAwesomeIcon icon={item.icon} size="lg" /><span className="ml-4">{item.text}</span></li>
             </a>
           )
         })}
